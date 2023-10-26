@@ -1,14 +1,17 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React from 'react';
+import { View, Text, Button } from 'react-native';
 
-import { useMyContext } from "../../State/State";
+import { useMyContext } from '../../State/State';
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const { myState, setMyState } = useMyContext();
   return (
     <View>
-      <Text>Home</Text>
-      <Text>{myState}</Text>
+      <Text style={{ fontSize: 20 }}>Home</Text>
+      <Button
+        title="Go to Details"
+        onPress={() => navigation.navigate('Login')}
+      />
     </View>
   );
 };
