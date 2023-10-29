@@ -1,20 +1,18 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 
+import CardList from '../../Components/CardList/CardList';
 import Loading from '../../Components/Loading/Loading';
 import { useMyContext } from '../../State/State';
+import { GlobalStyles } from '../../styles/GlobalStyles';
 
 const Home = ({ navigation }) => {
-  const { myState, data } = useMyContext();
-  console.log(data.length);
+  const { data } = useMyContext();
+  const { container } = GlobalStyles;
+  console.log(data);
   return (
-    <View>
-      <Text style={{ fontSize: 20 }}>Home</Text>
-      <Loading />
-      <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Login')}
-      />
+    <View style={container}>
+      {data ? <CardList persons={data} /> : <Loading />}
     </View>
   );
 };
