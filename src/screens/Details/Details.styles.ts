@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native';
-export const LoginStyles = StyleSheet.create({
+export const DetailsStyles = StyleSheet.create({
   view: {
     flex: 1,
     width: '100%',

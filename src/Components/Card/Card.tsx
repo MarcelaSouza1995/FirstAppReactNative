@@ -1,16 +1,30 @@
-import { View, Text, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 
+import CardSyles from './Card.styles';
 import { CardProps } from '../../Interfaces/interfaces';
 
 const Card = (props: CardProps) => {
-  const { name, image, status } = props;
-  console.log(image);
+  const { name, image, status, id } = props;
+  const { view, textTitle, text, illustration } = CardSyles;
+  const navigation = useNavigation();
+
+  const goToDetails = (item: any) => {
+    navigation.navigate('Details', { item });
+  };
   return (
-    <View style={{ borderColor: 'black', borderWidth: 1 }}>
-      <Text>{name}</Text>
-      <Image source={{ uri: image }} style={{ width: 50, height: 50 }} />
-      <Text>{status}</Text>
-    </View>
+    <TouchableOpacity style={view} onPress={() => goToDetails(id)}>
+      <Text
+        style={textTitle}
+        numberOfLines={2}
+        ellipsizeMode="tail"
+        adjustsFontSizeToFit
+      >
+        {name}
+      </Text>
+      <Image source={{ uri: image }} style={illustration} />
+      <Text style={text}>Status: {status}</Text>
+    </TouchableOpacity>
   );
 };
 export default Card;

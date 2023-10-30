@@ -7,7 +7,7 @@ export interface CardProps {
   name: string;
   status: string;
   image: string;
-  id?: string;
+  id: string;
 }
 
 export interface CardListProps {

@@ -9,7 +9,6 @@ import { GlobalStyles } from '../../styles/GlobalStyles';
 const Home = ({ navigation }) => {
   const { data } = useMyContext();
   const { container } = GlobalStyles;
-  console.log(data);
   return (
     <View style={container}>
       {data ? <CardList persons={data} /> : <Loading />}
