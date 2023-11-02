@@ -13,8 +13,8 @@ const CardList = (props: CardListProps) => {
       <View style={view}>
         {chunk(persons, 2).map((row, index) => (
           <View key={index} style={{ flexDirection: 'row' }}>
-            {row.map(({ id, name, image, status }) => (
-              <Card key={id} name={name} image={image} status={status} />
+            {row.map((person, index) => (
+              <Card key={index} person={person} />
             ))}
           </View>
         ))}

@@ -1,19 +1,38 @@
+import { MaterialCommunityIcons } from '@expo/vector-icons'; // Importe o ícone que você deseja usar
 import { useNavigation } from '@react-navigation/native';
+import React, { useState } from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 
 import CardSyles from './Card.styles';
-import { CardProps } from '../../Interfaces/interfaces';
+import { CardProps, person } from '../../Interfaces/interfaces';
+import { useMyContext } from '../../State/State';
 
 const Card = (props: CardProps) => {
-  const { name, image, status, id } = props;
-  const { view, textTitle, text, illustration } = CardSyles;
+  const { person } = props;
+  const { name, image, id, isFavorite } = person;
+  const { view, textTitle, button, illustration, text, heart } = CardSyles;
   const navigation = useNavigation();
+  const { toggleFavorite } = useMyContext();
 
-  const goToDetails = (item: any) => {
-    navigation.navigate('Details', { item });
+  const goToDetails = (person: person) => {
+    navigation.removeListener;
+    navigation.navigate('Details', { person });
   };
+
+  const handleFavoritar = () => {
+    toggleFavorite(person);
+  };
+
   return (
-    <TouchableOpacity style={view} onPress={() => goToDetails(id)}>
+    <View style={view}>
+      <TouchableOpacity onPress={handleFavoritar} style={heart}>
+        <MaterialCommunityIcons
+          name={isFavorite ? 'heart' : 'heart-outline'}
+          size={20}
+          color={isFavorite ? 'red' : 'gray'}
+        />
+      </TouchableOpacity>
+
       <Text
         style={textTitle}
         numberOfLines={2}
@@ -23,8 +42,10 @@ const Card = (props: CardProps) => {
         {name}
       </Text>
       <Image source={{ uri: image }} style={illustration} />
-      <Text style={text}>Status: {status}</Text>
-    </TouchableOpacity>
+      <TouchableOpacity style={button} onPress={() => goToDetails(person)}>
+        <Text style={text}>Details</Text>
+      </TouchableOpacity>
+    </View>
   );
 };
 export default Card;
