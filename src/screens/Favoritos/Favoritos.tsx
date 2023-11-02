@@ -2,6 +2,7 @@ import { View, Text } from 'react-native';
 
 import FavoritosStyle from './Favoritos.styles';
 import CardList from '../../Components/CardList/CardList';
+import Header from '../../Components/Header/Header';
 import Loading from '../../Components/Loading/Loading';
 import { useMyContext } from '../../State/State';
 
@@ -12,6 +13,7 @@ const Favoritos = () => {
 
   return (
     <View style={view}>
+      <Header />
       {favoritos ? <CardList persons={favoritos} /> : <Loading />}
     </View>
   );
