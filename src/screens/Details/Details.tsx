@@ -7,7 +7,7 @@ const Details = ({ route }) => {
   const { view, illustration, textTitle, text } = DetailsStyles;
   const { person } = route.params;
   const { name, image, species, gender, origin, location, status } = person;
-  console.log(Object.keys(person));
+  //(Object.keys(person));
 
   return (
     <View style={view}>

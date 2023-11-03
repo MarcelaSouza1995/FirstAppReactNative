@@ -2,9 +2,10 @@ import { StyleSheet } from 'react-native';
 
 const HeaderStyles = StyleSheet.create({
   image: {
-    width: '80%',
-    height: 95,
-    padding: 10,
+    width: '58%',
+    height: 70,
+    marginTop: '12%',
+    right: '18%',
   },
 });
 

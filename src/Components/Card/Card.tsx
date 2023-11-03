@@ -29,7 +29,7 @@ const Card = (props: CardProps) => {
         <MaterialCommunityIcons
           name={isFavorite ? 'heart' : 'heart-outline'}
           size={20}
-          color={isFavorite ? 'red' : 'gray'}
+          color={isFavorite ? 'red' : 'black'}
         />
       </TouchableOpacity>
 

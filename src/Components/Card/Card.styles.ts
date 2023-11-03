@@ -1,21 +1,23 @@
 import { StyleSheet } from 'react-native';
 const CardSyles = StyleSheet.create({
   view: {
-    width: '45%',
+    width: '47%',
     height: 170,
-    backgroundColor: '#CFCFCF',
+    backgroundColor: '#a1e4d3',
     padding: 5,
     margin: 5,
     alignContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
+    border: '#000',
+    borderWidth: 1,
     justifyContent: 'space-around',
-    shadowColor: '#000000',
-    shadowOpacity: 0.8,
+    shadowColor: '#f8ff74',
+    shadowOpacity: 0.5,
     shadowRadius: 2,
     shadowOffset: {
-      height: 1,
-      width: 1,
+      height: 4,
+      width: 4,
     },
   },
   textTitle: {
