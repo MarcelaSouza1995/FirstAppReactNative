@@ -11,14 +11,15 @@ export const MyProvider = ({ children }) => {
   const [myState, setMyState] = useState('Marcela');
   const [data, setData] = useState([]);
   const [favoritos, setFavoritos] = useState([]);
+  const [page, setPage] = useState(1);
 
   const fetchDataFromAPI = async () => {
     try {
-      const responseData = await fetchData('/character');
+      const responseData = await fetchData(`/character?page=${page}`);
       const newData = responseData.results.map((obj) => {
         return { ...obj, isFavorite: false };
       });
-      setData(newData);
+      setData([...data, ...newData]);
     } catch (error) {
       console.error('Erro ao buscar dados:', error);
     }
@@ -26,7 +27,7 @@ export const MyProvider = ({ children }) => {
 
   useEffect(() => {
     fetchDataFromAPI();
-  }, []);
+  }, [page]);
 
   useEffect(() => {
     const loadFavoritosFromStorage = async () => {
@@ -73,6 +74,8 @@ export const MyProvider = ({ children }) => {
     favoritos,
     setFavoritos,
     toggleFavorite,
+    setPage,
+    page,
   };
 
   return (

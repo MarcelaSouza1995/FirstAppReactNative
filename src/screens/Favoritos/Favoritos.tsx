@@ -14,7 +14,11 @@ const Favoritos = () => {
   return (
     <View style={view}>
       <Header />
-      {favoritos ? <CardList persons={favoritos} /> : <Loading />}
+      {favoritos ? (
+        <CardList persons={favoritos} screen="Favoritos" />
+      ) : (
+        <Loading />
+      )}
     </View>
   );
 };

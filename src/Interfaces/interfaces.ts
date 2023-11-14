@@ -1,3 +1,5 @@
+import { TextStyle } from 'react-native';
+
 export interface Login {
   user: string;
   password: string;
@@ -34,4 +36,11 @@ export interface origin {
 }
 export interface CardListProps {
   persons: CardProps[];
+  screen: string;
+}
+
+export interface ButtonProps {
+  title: string;
+  textStyle?: TextStyle;
+  onPress: any;
 }

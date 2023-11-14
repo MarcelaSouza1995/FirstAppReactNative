@@ -10,10 +10,11 @@ import { useMyContext } from '../../State/State';
 const Home = () => {
   const { data } = useMyContext();
   const { view } = HomeStyles;
+
   return (
     <View style={view}>
       <Header />
-      {data ? <CardList persons={data} /> : <Loading />}
+      {data ? <CardList persons={data} screen="Home" /> : <Loading />}
     </View>
   );
 };

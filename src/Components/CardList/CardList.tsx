@@ -2,12 +2,14 @@ import { ScrollView, View } from 'react-native';
 
 import CardLIstStyles from './CardList.styles';
 import { CardListProps } from '../../Interfaces/interfaces';
+import { useMyContext } from '../../State/State';
+import Button from '../Button/Button';
 import Card from '../Card/Card';
 
 const CardList = (props: CardListProps) => {
-  const { persons } = props;
+  const { persons, screen } = props;
   const { view } = CardLIstStyles;
-
+  const { setPage, page } = useMyContext();
   return (
     <ScrollView>
       <View style={view}>
@@ -19,6 +21,9 @@ const CardList = (props: CardListProps) => {
           </View>
         ))}
       </View>
+      {screen === 'Home' && (
+        <Button title="Load more" onPress={() => setPage(page + 1)} />
+      )}
     </ScrollView>
   );
 };

@@ -1,7 +1,7 @@
 import { View, Image } from 'react-native';
 
 import HeaderStyles from './Heeader.styles';
-import Backgrounddetails from '../../images/BackgroundDetails.png';
+import ImageHeader from '../../images/ImageHeader.png';
 import RickAndMorty from '../../images/RickAndMorty.png';
 
 const Header = () => {
@@ -9,9 +9,8 @@ const Header = () => {
   return (
     <View style={{ flexDirection: 'row' }}>
       <Image
-        source={Backgrounddetails}
+        source={ImageHeader}
         style={{
-          //position: 'absolute',
           top: '4%',
           right: '2%',
           width: '45%',
