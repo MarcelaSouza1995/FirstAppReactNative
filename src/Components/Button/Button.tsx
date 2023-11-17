@@ -4,13 +4,13 @@ import { TouchableOpacity, Text, View } from 'react-native';
 import ButtonStyles from './Button.style';
 import { ButtonProps } from '../../Interfaces/interfaces';
 const Button = (props: ButtonProps) => {
-  const { title, onPress } = props;
-  const { text, button } = ButtonStyles;
+  const { title, onPress, textStyle } = props;
+  const { text, view } = ButtonStyles;
 
   return (
-    <View style={{ alignSelf: 'center', width: '60%' }}>
-      <TouchableOpacity style={button} onPress={onPress}>
-        <Text style={text}>{title}</Text>
+    <View style={view}>
+      <TouchableOpacity style={textStyle} onPress={onPress}>
+        <Text style={[text]}>{title}</Text>
       </TouchableOpacity>
     </View>
   );

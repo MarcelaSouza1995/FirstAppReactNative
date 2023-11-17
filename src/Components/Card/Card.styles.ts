@@ -3,7 +3,8 @@ const CardSyles = StyleSheet.create({
   view: {
     width: '47%',
     height: 170,
-    backgroundColor: '#a1e4d3',
+    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+
     padding: 5,
     margin: 5,
     alignContent: 'center',
@@ -12,18 +13,11 @@ const CardSyles = StyleSheet.create({
     border: '#000',
     borderWidth: 1,
     justifyContent: 'space-around',
-    shadowColor: '#f8ff74',
-    shadowOpacity: 0.5,
-    shadowRadius: 2,
-    shadowOffset: {
-      height: 4,
-      width: 4,
-    },
   },
   textTitle: {
     fontSize: 15,
     textAlign: 'center',
-    fontWeight: '400',
+    fontWeight: '600',
     marginRight: 15,
   },
   text: {
@@ -31,21 +25,26 @@ const CardSyles = StyleSheet.create({
     textAlign: 'center',
   },
   illustration: {
-    width: '50%',
-    height: '50%',
+    width: '40%',
+    height: '45%',
     borderRadius: 50,
+    borderColor: '#000',
+    borderWidth: 1,
   },
   button: {
-    width: '70%',
+    width: '80%',
+    borderWidth: 1,
+    margin: 10,
+    borderRadius: 5,
     backgroundColor: '#ADAAAB',
     padding: '2%',
-    borderRadius: 10,
+    borderColor: '#000000',
     shadowColor: '#000000',
     shadowOpacity: 0.8,
     shadowRadius: 2,
     shadowOffset: {
-      height: 1,
-      width: 1,
+      height: 4,
+      width: 4,
     },
   },
   heart: {

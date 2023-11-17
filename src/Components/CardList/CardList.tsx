@@ -8,7 +8,7 @@ import Card from '../Card/Card';
 
 const CardList = (props: CardListProps) => {
   const { persons, screen } = props;
-  const { view } = CardLIstStyles;
+  const { view, button } = CardLIstStyles;
   const { setPage, page } = useMyContext();
   return (
     <ScrollView>
@@ -22,7 +22,11 @@ const CardList = (props: CardListProps) => {
         ))}
       </View>
       {screen === 'Home' && (
-        <Button title="Load more" onPress={() => setPage(page + 1)} />
+        <Button
+          title="Load more"
+          onPress={() => setPage(page + 1)}
+          textStyle={button}
+        />
       )}
     </ScrollView>
   );

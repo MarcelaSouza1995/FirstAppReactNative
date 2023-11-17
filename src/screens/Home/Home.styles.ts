@@ -8,7 +8,6 @@ const HomeStyles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#000',
   },
 });
 
