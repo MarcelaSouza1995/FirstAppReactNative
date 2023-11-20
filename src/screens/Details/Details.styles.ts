@@ -51,4 +51,15 @@ export const DetailsStyles = StyleSheet.create({
     height: '8%',
     marginVertical: '10%',
   },
+  back: {
+    right: '40%',
+    backgroundColor: 'rgba(255,255,255,0.6)',
+    borderRadius: 20,
+    width: '8%',
+    height: '4%',
+    alignItems: 'center',
+    alignContent: 'center',
+    borderColor: '#FFF',
+    borderWidth: 1,
+  },
 });

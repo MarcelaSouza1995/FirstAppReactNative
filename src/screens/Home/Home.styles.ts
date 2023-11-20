@@ -9,6 +9,17 @@ const HomeStyles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  input: {
+    color: '#FFF',
+    borderColor: '#FFF',
+    borderWidth: 1,
+    borderRadius: 10,
+    paddingVertical: '2%',
+    paddingHorizontal: '5%',
+    marginVertical: -13,
+    left: 50,
+    bottom: 20,
+  },
 });
 
 export default HomeStyles;

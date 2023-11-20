@@ -4,6 +4,7 @@ const ButtonStyles = StyleSheet.create({
     fontSize: 16,
     textAlign: 'center',
     fontWeight: '500',
+    color: '#141414',
   },
   view: {
     alignSelf: 'center',

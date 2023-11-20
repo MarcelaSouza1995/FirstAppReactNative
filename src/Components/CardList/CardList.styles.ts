@@ -9,13 +9,13 @@ const CardLIstStyles = StyleSheet.create({
   },
   button: {
     width: '80%',
-    borderColor: '#FFFF',
+    borderColor: '#141414',
     borderWidth: 1,
     margin: 10,
     borderRadius: 5,
-    backgroundColor: '#ADAAAB',
+    backgroundColor: '#a0a0a0',
     padding: '2%',
-    shadowColor: '#f8ff74',
+    shadowColor: '#000',
     shadowOpacity: 0.2,
     shadowRadius: 2,
     shadowOffset: {

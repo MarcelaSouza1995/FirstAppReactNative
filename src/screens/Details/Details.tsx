@@ -1,6 +1,6 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Icone from 'react-native-vector-icons/Fontisto';
 
@@ -8,7 +8,7 @@ import { DetailsStyles } from './Details.styles';
 import Background from '../../Components/Background/Background';
 import ImageDetails from '../../Images/Details.png';
 
-const Details = ({ route }) => {
+const Details = ({ route, navigation }) => {
   const {
     view,
     illustration,
@@ -18,6 +18,7 @@ const Details = ({ route }) => {
     icon,
     container,
     imageTitle,
+    back,
   } = DetailsStyles;
   const { person } = route.params;
   const { name, image, species, gender, origin, location, status } = person;
@@ -25,6 +26,9 @@ const Details = ({ route }) => {
   return (
     <View style={view}>
       <Background />
+      <TouchableOpacity onPress={() => navigation.goBack()} style={back}>
+        <Ionicons name="arrow-back-outline" size={30} color="#000" />
+      </TouchableOpacity>
       <Image source={ImageDetails} style={imageTitle} />
 
       <View style={container}>

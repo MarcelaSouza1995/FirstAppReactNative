@@ -8,10 +8,11 @@ const MyContext = createContext();
 export const useMyContext = () => useContext(MyContext);
 
 export const MyProvider = ({ children }) => {
-  const [myState, setMyState] = useState('Marcela');
+  const [originalData, setOriginalData] = useState([]);
   const [data, setData] = useState([]);
   const [favoritos, setFavoritos] = useState([]);
   const [page, setPage] = useState(1);
+  const [filter, setFilter] = useState('');
 
   const fetchDataFromAPI = async () => {
     try {
@@ -19,7 +20,9 @@ export const MyProvider = ({ children }) => {
       const newData = responseData.results.map((obj) => {
         return { ...obj, isFavorite: false };
       });
-      setData([...data, ...newData]);
+
+      setOriginalData([...originalData, ...newData]);
+      setData([...originalData, ...newData]);
     } catch (error) {
       console.error('Erro ao buscar dados:', error);
     }
@@ -42,6 +45,14 @@ export const MyProvider = ({ children }) => {
     };
     loadFavoritosFromStorage();
   }, []);
+
+  useEffect(() => {
+    if (filter === '') {
+      setData(originalData);
+    } else {
+      setData(originalData.filter((person) => person.name.includes(filter)));
+    }
+  }, [filter, originalData]);
 
   const toggleFavorite = (item) => {
     const updatedItens = data.map((i) => {
@@ -68,14 +79,14 @@ export const MyProvider = ({ children }) => {
   };
 
   const contextValue = {
-    myState,
-    setMyState,
     data,
     favoritos,
     setFavoritos,
     toggleFavorite,
     setPage,
     page,
+    filter,
+    setFilter,
   };
 
   return (

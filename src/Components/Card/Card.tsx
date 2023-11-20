@@ -4,6 +4,7 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 
 import CardSyles from './Card.styles';
+import bcButton from '../../Images/bcButton1.png';
 import { CardProps, person } from '../../Interfaces/interfaces';
 import { useMyContext } from '../../State/State';
 import Button from '../Button/Button';
