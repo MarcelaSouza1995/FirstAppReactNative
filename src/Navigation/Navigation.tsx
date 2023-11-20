@@ -25,7 +25,16 @@ const Navigation = () => {
   return (
     <NavigationContainer>
       <MyProvider>
-        <Tab.Navigator screenOptions={{ headerShown: false }}>
+        <Tab.Navigator
+          screenOptions={{
+            headerShown: false,
+            tabBarActiveTintColor: 'black', // Cor do ícone da aba ativa
+            tabBarInactiveTintColor: 'gray', // Cor do ícone da aba inativa
+            tabBarStyle: {
+              backgroundColor: 'rgba(255,255,255, 0.2)',
+            },
+          }}
+        >
           <Tab.Screen
             name="HomeTab"
             component={HomeStack}

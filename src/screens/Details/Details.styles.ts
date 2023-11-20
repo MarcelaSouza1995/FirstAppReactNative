@@ -3,16 +3,17 @@ export const DetailsStyles = StyleSheet.create({
   view: {
     flex: 1,
     width: '100%',
-    backgroundColor: '#CFCFCF',
     alignContent: 'center',
     alignItems: 'center',
-    borderRadius: 40,
-    justifyContent: 'space-around',
+    justifyContent: 'center',
   },
   illustration: {
-    width: 300,
-    height: 300,
+    width: '65%',
+    height: '35%',
     borderRadius: 1000,
+    marginVertical: '5%',
+    borderColor: '#000',
+    borderWidth: 1,
   },
   textTitle: {
     fontSize: 40,
@@ -20,5 +21,45 @@ export const DetailsStyles = StyleSheet.create({
   },
   text: {
     fontSize: 15,
+  },
+  viewTopic: {
+    flexDirection: 'row',
+    alignContent: 'center',
+    alignItems: 'center',
+  },
+  icon: {
+    paddingRight: 10,
+  },
+  imageBackground: {
+    position: 'absolute',
+    width: '100%',
+    height: '100%',
+  },
+  container: {
+    width: '75%',
+    backgroundColor: 'rgba(255,255,255, 0.8)',
+    justifyContent: 'space-around',
+    alignContent: 'center',
+    alignItems: 'center',
+    borderRadius: 30,
+    height: '70%',
+    borderColor: '#000',
+    borderWidth: 2,
+  },
+  imageTitle: {
+    width: '65%',
+    height: '8%',
+    marginVertical: '10%',
+  },
+  back: {
+    right: '40%',
+    backgroundColor: 'rgba(255,255,255,0.6)',
+    borderRadius: 20,
+    width: '8%',
+    height: '4%',
+    alignItems: 'center',
+    alignContent: 'center',
+    borderColor: '#FFF',
+    borderWidth: 1,
   },
 });

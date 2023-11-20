@@ -1,15 +1,17 @@
 import { MaterialCommunityIcons } from '@expo/vector-icons'; // Importe o ícone que você deseja usar
 import { useNavigation } from '@react-navigation/native';
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 
 import CardSyles from './Card.styles';
+import bcButton from '../../Images/bcButton1.png';
 import { CardProps, person } from '../../Interfaces/interfaces';
 import { useMyContext } from '../../State/State';
+import Button from '../Button/Button';
 
 const Card = (props: CardProps) => {
   const { person } = props;
-  const { name, image, id, isFavorite } = person;
+  const { name, image, isFavorite } = person;
   const { view, textTitle, button, illustration, text, heart } = CardSyles;
   const navigation = useNavigation();
   const { toggleFavorite } = useMyContext();
@@ -42,9 +44,11 @@ const Card = (props: CardProps) => {
         {name}
       </Text>
       <Image source={{ uri: image }} style={illustration} />
-      <TouchableOpacity style={button} onPress={() => goToDetails(person)}>
-        <Text style={text}>Details</Text>
-      </TouchableOpacity>
+      <Button
+        title="Details"
+        onPress={() => goToDetails(person)}
+        textStyle={button}
+      />
     </View>
   );
 };

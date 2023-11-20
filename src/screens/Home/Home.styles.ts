@@ -8,7 +8,17 @@ const HomeStyles = StyleSheet.create({
     flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#000',
+  },
+  input: {
+    color: '#FFF',
+    borderColor: '#FFF',
+    borderWidth: 1,
+    borderRadius: 10,
+    paddingVertical: '2%',
+    paddingHorizontal: '5%',
+    marginVertical: -13,
+    left: 50,
+    bottom: 20,
   },
 });
 
